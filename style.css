@@ -1,0 +1,644 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol,
+ul {
+	list-style: none;
+}
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* custom css here */
+html {
+	scroll-behavior: smooth;
+}
+
+canvas {
+	display: block;
+	position: relative;
+	left: 0;
+	top: 0;
+	pointer-events: auto;
+}
+
+/* @font-face {
+	font-family: "Helvetica";
+	src: url(/assets/fonts/pangram/Pangram-Black.otf);
+	font-weight: 900;
+} */
+
+@font-face {
+	font-family: "Pangram";
+	src: url(/assets/fonts/pangram/Pangram-Black.otf);
+	font-weight: 900;
+}
+
+@font-face {
+	font-family: "Pangram";
+	src: url(/assets/fonts/pangram/Pangram-Bold.otf);
+	font-weight: 700;
+
+}
+
+@font-face {
+	font-family: "Pangram";
+	src: url(/assets/fonts/pangram/Pangram-Regular.otf);
+	font-weight: 400;
+
+}
+
+@font-face {
+	font-family: "Pangram";
+	src: url(/assets/fonts/pangram/Pangram-ExtraLight.otf);
+	font-weight: 200;
+
+}
+
+@font-face {
+	font-family: "Social";
+	src: url(/assets/fonts/social/ABCSocialVariable-Trial.ttf);
+}
+
+
+@font-face {
+	font-family: "OCR";
+	src: url(/OCR-B-Std-Regular.otf);
+}
+
+h1 {
+	font-family: 'Pangram';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 32px;
+	color: #C387FF;
+}
+
+h2 {
+
+	width: 100%;
+	font-family: 'Social';
+	font-style: normal;
+	font-weight: 300;
+	font-size: 32px;
+	line-height: 41px;
+	color: #000000;
+}
+
+h1.blank {
+	opacity: 0.6;
+	font-weight: 400;
+
+}
+
+#sentenceContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 0px 20px;
+	isolation: isolate;
+	height: 100vh;
+	position: relative;
+	gap: 50px;
+	overflow: hidden;
+	background: #F8FFAC;
+
+}
+
+div.sentence {
+	max-width: 460px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-end;
+	padding: 0px;
+	gap: 10px;
+	width: 100%;
+
+}
+
+div.whatif {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 34px;
+	width: 100%;
+
+}
+
+div.half {
+	flex: 1;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 10px;
+
+}
+
+div.blank {
+	/* blank */
+
+	flex: 1;
+	width: 100%;
+
+	box-sizing: border-box;
+
+	/* Auto layout */
+
+
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	/* padding: 0px; */
+	gap: 10px;
+
+
+	border-bottom: 1.5px solid #49088B;
+	/* transform: matrix(1, 0, 0, -1, 0, 0); */
+
+}
+
+#pillDiv {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	padding: 0px 0px 0px 0px;
+	gap: 0px;
+	position: absolute;
+	width: 65px;
+	height: 22px;
+	left: calc(50% - 65px/2 - 0.5px);
+	top: -50px;
+	transition: all 2s;
+	transform: rotate(60deg);
+}
+
+#pillDiv.fall {
+	top: 80vh;
+	transform: rotate(-30deg);
+}
+
+#pillDiv.pulse {
+	top: 80vh;
+	animation: pulse 1s infinite;
+	cursor: pointer;
+}
+
+#pillDiv.open {
+	top: calc(100vh);
+	transform: rotate(-30deg);
+	width: 164px;
+	height: 21px;
+	left: calc(50% - 164px/2 + 11.7px);
+	gap: 100px;
+}
+
+/* #pillDiv.lower {
+	top: calc(100vh );
+	transform: rotate(-30deg);
+	width: 164px;
+	height: 21px;
+	left: calc(50% - 164px/2 + 11.7px);
+	gap: 100px;
+} */
+
+@keyframes pulse {
+	0% {
+		transform: rotate(-30deg) scale(1);
+	}
+
+	70% {
+		transform: rotate(-30deg) scale(1.2);
+	}
+
+	100% {
+		transform: rotate(-30deg) scale(1);
+	}
+}
+
+
+#pillCover {
+	position: absolute;
+	width: 195px;
+	height: 69px;
+	left: 2px;
+	top: -69px;
+
+	background: #F8FFAC;
+}
+
+#pillHolder {
+	position: absolute;
+	width: 200px;
+	height: 5px;
+	left: calc(50% - 200px/2 - 7px);
+	top: 50px;
+	transition: height 300ms;
+
+	border-radius: 64px;
+	background: #C387FF;
+
+}
+
+#pillHolder.isActive {
+	/* background: #C387FF linear-gradient(180deg, #440286 0%, #C387FF 100%); */
+
+	height: 50px;
+
+}
+
+.clickAnywhere {
+	font-family: 'Social';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 19px;
+	/* identical to box height */
+
+	text-align: center;
+	opacity: 0.6;
+	color: #49088B;
+}
+
+/* slot machine */
+.doors {
+	display: flex;
+}
+
+.door {
+	width: 100%;
+	height: 80px;
+	overflow: hidden;
+	/* padding: 0px 0px 20px 0px; */
+	border-bottom: 1.5px solid #49088B;
+}
+
+@media (max-width: 500px) {
+	.door {
+		height: 120px;
+
+	}
+}
+
+.boxes {
+	/* transform: translateY(0); */
+	transition: transform 1s ease-in-out;
+
+}
+
+.box {
+	font-family: 'Pangram';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 32px;
+	color: #C387FF;
+	opacity: 0.6;
+	font-weight: 400;
+	line-height: 38px;
+	display: flex;
+	justify-content: left;
+	align-items: flex-start;
+	margin-bottom: 40px;
+	/* font-size: 3rem; */
+}
+
+
+.info {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+}
+
+[hidden] {
+	display: none !important;
+}
+
+
+#overlayBox {
+	/* background: #C387FF; */
+	position: absolute;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 150px;
+	padding: 40px;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	overflow: hidden;
+	opacity: 100;
+
+}
+
+#overlayBox>:not(.circle) {
+	opacity: 100;
+
+	animation: fadein 2s;
+	animation-fill-mode: forwards;
+}
+
+@media (max-width: 500px) {
+	#overlayBox {
+		/* height: 100%; */
+		position: absolute;
+		padding: 20px;
+		flex-direction: column;
+		gap: 20px;
+		bottom: auto;
+
+
+	}
+}
+
+
+div.circle {
+	position: absolute;
+	left: calc(50% - 5px);
+	top: calc(80vh - 5px);
+	/* top: 20px; */
+	width: 10px;
+	height: 10px;
+	border-radius: 100px;
+	animation: grow 2s;
+	animation-fill-mode: forwards;
+	background: #C387FF;
+	z-index: 0;
+}
+
+@keyframes fadein {
+	0% {
+		/* bottom: -100%;
+		top: 100%; */
+		opacity: 0;
+	}
+
+	60% {
+		/* bottom: -100%;
+		top: 100%; */
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 100;
+		/* bottom: 0;
+		top: 0; */
+
+	}
+}
+
+@keyframes grow {
+	0% {
+		transform: scale(1);
+		opacity: 0;
+
+	}
+
+
+	100% {
+		transform: scale(400);
+		opacity: 100;
+
+	}
+}
+
+div.close {
+
+	position: fixed;
+	width: 36px;
+	height: 36px;
+	right: 20px;
+	top: 40px;
+
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 4px;
+
+
+	/* background: #FFFFFF; */
+	border-radius: 44px;
+	cursor: pointer;
+	/* background: #FFFFFF; */
+}
+
+div.close:hover {
+	background: #FFFFFF90;
+}
+
+#pillContainer {
+	/* position: absolute; */
+	/* width: 350px;*/
+	height: 660px;
+}
+
+#pillBottle {
+	position: relative;
+	width: 336px;
+	height: 632.23px;
+	left: -5px;
+	top: -130px;
+	z-index: 1;
+}
+
+#need {
+	position: relative;
+	width: 130.29px;
+	height: 60px;
+	left: 160px;
+	top: 382px;
+
+	font-family: 'OCR B Std';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16.4571px;
+	line-height: 20px;
+	z-index: 3;
+	color: #000000;
+}
+
+#cost {
+	position: relative;
+	width: 130.29px;
+	height: 80px;
+	left: 159.57px;
+	top: 430.43px;
+	z-index: 2;
+	font-family: 'OCR B Std';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 13.7143px;
+	line-height: 16px;
+
+	color: #000000;
+}
+
+p {
+	position: relative;
+
+	font-family: 'Social';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 26px;
+	max-width: 500px;
+	color: #000000;
+}
+
+br {
+	height: 100px;
+}
+
+div.infoParagraph {
+	max-width: 500px;
+
+
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 0px;
+	gap: 20px;
+
+}
+
+@media (max-width: 500px) {
+	p {
+		width: 100%;
+	}
+
+	div.infoParagraph {
+		width: 100%;
+	}
+}
