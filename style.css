@@ -188,7 +188,7 @@ canvas {
 
 @font-face {
 	font-family: "OCR";
-	src: url(/OCR-B-Std-Regular.otf);
+	src: url(/assets/fonts/ocr/OCR-B-Std-Regular.otf);
 }
 
 h1 {
@@ -332,15 +332,15 @@ div.blank {
 
 @keyframes pulse {
 	0% {
-		transform: rotate(-30deg) scale(1);
-	}
-
-	70% {
 		transform: rotate(-30deg) scale(1.2);
 	}
 
+	70% {
+		transform: rotate(-30deg) scale(1.4);
+	}
+
 	100% {
-		transform: rotate(-30deg) scale(1);
+		transform: rotate(-30deg) scale(1.2);
 	}
 }
 
@@ -610,7 +610,7 @@ p {
 
 	font-family: 'Social';
 	font-style: normal;
-	font-weight: 400;
+	font-weight: 350;
 	font-size: 20px;
 	line-height: 26px;
 	max-width: 500px;
@@ -641,4 +641,8 @@ div.infoParagraph {
 	div.infoParagraph {
 		width: 100%;
 	}
+}
+
+a {
+	color: #6700CD;
 }
