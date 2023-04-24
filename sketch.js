@@ -59,6 +59,7 @@ window.onload = function () {
 
     function init(firstInit = true, groups = 1, duration = 1) {
         
+
         let pillContainer = document.getElementById("pillHolder");
         
         pillContainer.classList.remove("pulse");
@@ -83,6 +84,9 @@ window.onload = function () {
             // cover.style.order="1";
         }
         for (const door of doors) {
+            if (firstInit) {
+                door.dataset.spinned = '0';
+              }
             door.dataset.spinned = '0';
             // if (firstInit) {
             //     door.dataset.spinned = '0';
